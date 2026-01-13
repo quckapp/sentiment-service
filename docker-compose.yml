@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  sentiment-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quikapp-sentiment-service
+    ports:
+      - "5017:5017"
+    environment:
+      - PORT=5017
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - quikapp-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: quikapp-sentiment-redis
+    ports:
+      - "6386:6379"
+    networks:
+      - quikapp-network
+
+networks:
+  quikapp-network:
+    driver: bridge
