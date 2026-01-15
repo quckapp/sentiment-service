@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: quikapp-sentiment-service
+    container_name: quckapp-sentiment-service
     ports:
       - "5017:5017"
     environment:
@@ -15,17 +15,17 @@ services:
     depends_on:
       - redis
     networks:
-      - quikapp-network
+      - quckapp-network
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
-    container_name: quikapp-sentiment-redis
+    container_name: quckapp-sentiment-redis
     ports:
       - "6386:6379"
     networks:
-      - quikapp-network
+      - quckapp-network
 
 networks:
-  quikapp-network:
+  quckapp-network:
     driver: bridge

@@ -23,7 +23,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Sentiment Service",
-    description="QuikApp Sentiment Analysis and Emotion Detection Service",
+    description="QuckApp Sentiment Analysis and Emotion Detection Service",
     version="1.0.0",
     lifespan=lifespan,
 )
