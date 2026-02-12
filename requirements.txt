@@ -4,7 +4,7 @@ pydantic==2.5.3
 pydantic-settings==2.1.0
 redis==5.0.1
 httpx==0.26.0
-transformers==4.36.2
+transformers==4.53.0
 torch==2.1.2
 nltk==3.8.1
 textblob==0.17.1
